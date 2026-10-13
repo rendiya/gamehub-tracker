@@ -1,0 +1,231 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 337px;
+  max-width: 100%;
+  min-height: 644px;
+
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 16px;
+  background: #002138;
+
+  color: #ffffff;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+/* Game cover */
+.media {
+  position: relative;
+  flex-shrink: 0;
+
+  margin: 1px 1px 0;
+  aspect-ratio: 333 / 426;
+}
+
+.cover {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Favorite button */
+.favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 11px;
+
+  display: grid;
+  place-items: center;
+
+  width: 50px;
+  height: 50px;
+  padding: 0;
+
+  border: 1px solid #0095ff;
+  border-radius: 10px;
+
+  background: rgba(0, 99, 169, 0.15);
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.favoriteButton:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.favoriteButton:not(:disabled):hover {
+  background: rgba(0, 99, 169, 0.3);
+}
+
+.favoriteButton:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.discountBadge {
+  position: absolute;
+  right: 59px;
+  bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  width: 95px;
+  height: 35px;
+  padding: 0 3px;
+
+  border-radius: 6px;
+  background: #e63535;
+  color: #ffffff;
+}
+
+.storeIcon {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+}
+
+.storeLabel {
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.discountValue {
+  flex-shrink: 0;
+
+  color: #ffffff;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  white-space: nowrap;
+}
+
+/* Card information */
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+
+  padding: 8px 11px 10px;
+}
+
+.title {
+  margin: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+}
+
+.originalPrice {
+  margin: 7px 0 0;
+
+  color: #474747;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.currentPrice {
+  margin: 6px 0 0;
+
+  color: #a3e635;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin: 9px 0 0;
+
+  color: #ffcc00;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+/* Genres */
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin: auto 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.genre {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 27px;
+  padding: 0 9px;
+
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.2);
+
+  color: rgba(253, 252, 252, 0.66);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+/* Narrow screens */
+@media (max-width: 400px) {
+  .title {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .originalPrice {
+    font-size: 21px;
+  }
+
+  .currentPrice {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+
+.epicIcon {
+  display: block;
+  flex: 0 0 28px;
+
+  width: 28px;
+  height: 28px;
+
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}

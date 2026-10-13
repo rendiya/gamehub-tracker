@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gamehub-tracker",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+
+  // Frontend hasil `vite build` disajikan sebagai aset statis.
+  // /api/* selalu masuk ke Worker; path lain jatuh ke index.html (SPA).
+  "assets": {
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gamehub-db",
+      // Ganti dengan ID dari `npx wrangler d1 create gamehub-db` sebelum deploy pertama.
+      // Untuk dev lokal nilai ini boleh apa saja.
+      "database_id": "b51d58dd-bdc0-40e0-b685-f547f1da3453",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Sinkronisasi harga Steam tiap 6 jam (UTC).
+  "triggers": {
+    "crons": ["0 */6 * * *"]
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

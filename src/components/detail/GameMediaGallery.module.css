@@ -1,0 +1,126 @@
+.root {
+  min-width: 0;
+}
+
+.mainArtwork {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 884 / 495;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #00101b;
+}
+
+.artwork,
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.artworkWide {
+  object-fit: cover;
+}
+
+.artworkCover {
+  object-fit: contain;
+}
+
+.artwork {
+  animation: mediaPreviewIn 220ms ease-out both;
+}
+
+.video {
+  object-fit: contain;
+  background: #000a11;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-top: 18px;
+}
+
+.thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 283 / 164;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #00101b;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail:hover {
+  border-color: rgba(80, 180, 234, 0.8);
+}
+
+.selected {
+  border-color: #50b4ea;
+}
+
+.thumbnail:focus-visible {
+  outline: 3px solid #50b4ea;
+  outline-offset: 3px;
+}
+
+.playMark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(0, 10, 17, 0.65);
+  color: #fff;
+  pointer-events: none;
+}
+
+.playMark svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
+}
+
+.mediaNotice {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: rgba(0, 10, 17, 0.85);
+  color: #fff;
+  font-size: 14px;
+}
+
+@keyframes mediaPreviewIn {
+  from { opacity: 0.55; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+  .mainArtwork { aspect-ratio: 16 / 10; }
+  .gallery { gap: 8px; margin-top: 10px; }
+  .playMark { width: 40px; height: 40px; }
+  .playMark svg { width: 22px; height: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artwork { animation: none; }
+}

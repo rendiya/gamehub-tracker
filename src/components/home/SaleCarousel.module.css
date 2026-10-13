@@ -1,0 +1,111 @@
+.carousel {
+  position: relative;
+  box-sizing: border-box;
+  width: calc(100% - 30px);
+  max-width: 1410px;
+  aspect-ratio: 2048 / 489;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000a11;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+
+.viewport,
+.track,
+.slide,
+.slideLink {
+  width: 100%;
+  height: 100%;
+}
+
+.viewport { overflow: hidden; }
+.track {
+  display: flex;
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+.slide { flex: 0 0 100%; min-width: 0; }
+.slideLink { display: block; }
+.slideLink:focus-visible { outline: 3px solid #a3e635; outline-offset: -5px; }
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000a11;
+  user-select: none;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(0, 10, 17, 0.66);
+  color: #fff;
+  font: 600 34px / 1 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+.arrow svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.previous { left: 14px; }
+.next { right: 14px; }
+.arrow:hover { background: rgba(0, 99, 169, 0.85); }
+.arrow:focus-visible,
+.indicator:focus-visible { outline: 3px solid #a3e635; outline-offset: 3px; }
+
+.indicators {
+  position: absolute;
+  z-index: 2;
+  bottom: 12px;
+  left: 50%;
+  display: flex;
+  gap: 9px;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0, 10, 17, 0.66);
+}
+.indicator {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  cursor: pointer;
+}
+.indicatorActive { width: 24px; background: #a3e635; }
+
+@media (max-width: 768px) {
+  .carousel { width: calc(100% - 24px); aspect-ratio: 2.6 / 1; border-radius: 14px; }
+  .image { object-fit: cover; object-position: left center; }
+  .autumn { object-position: center; }
+  .arrow { width: 35px; height: 35px; font-size: 28px; }
+  .previous { left: 8px; }
+  .next { right: 8px; }
+  .indicators { bottom: 7px; gap: 6px; padding: 6px 9px; }
+}
+
+@media (max-width: 540px) {
+  .carousel { aspect-ratio: 16 / 9; border-radius: 12px; }
+  .arrow { width: 30px; height: 30px; font-size: 24px; }
+  .indicators { bottom: 5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { transition: none; }
+}

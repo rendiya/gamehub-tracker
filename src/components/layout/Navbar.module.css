@@ -1,0 +1,283 @@
+.header {
+  width: 100%;
+  height: min(7.7778vw, 112px);
+
+  background: linear-gradient(
+    90.48deg,
+    #002138 0%,
+    #000a11 100%
+  );
+
+  border: none;
+
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+
+  padding-left: 4.2361%;
+  padding-right: 2.9861%;
+}
+
+/* Brand */
+
+.logo {
+  flex: 0 0 15.5689%;
+
+  color: #ffffff;
+  font-size: min(2.7778vw, 40px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logoAccent {
+  color: #a3e635;
+}
+
+/* Search */
+
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+
+  height: min(3.5417vw, 51px);
+  margin-left: 7.4102%;
+  margin-right: 2.6946%;
+  padding-inline: 12px;
+
+  border: 1px solid #144161;
+  border-radius: min(1.1111vw, 16px);
+  background: transparent;
+
+  transform: translateY(1.5px);
+}
+
+.searchButton {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+
+  width: 20px;
+  height: 20px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  color: #0063a9;
+
+  cursor: pointer;
+}
+
+.searchButton svg {
+  width: 100%;
+  height: 100%;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 12px;
+
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  color: #ffffff;
+  font-size: clamp(11px, 0.9722vw, 14px);
+}
+
+.searchInput::placeholder {
+  color: #075b85;
+  opacity: 1;
+}
+
+/* Navigation actions */
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  column-gap: 6.5744%;
+
+  flex: 0 0 21.6317%;
+
+  transform: translateY(2px);
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: 100%;
+  height: min(2.9167vw, 42px);
+  padding: 0 6px;
+
+  border: 1px solid #144161;
+  border-radius: 10px;
+  background: transparent;
+
+  color: #ffffff;
+  font-size: clamp(11px, 0.9722vw, 14px);
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.catalogIcon {
+  flex: 0 0 auto;
+  width: min(2.1528vw, 31px);
+  height: min(2.1528vw, 31px);
+  color: #ffcc00;
+}
+
+.favoriteIcon {
+  flex: 0 0 auto;
+  width: min(1.6667vw, 24px);
+  height: min(1.6667vw, 24px);
+  color: #f45b85;
+}
+
+/* Inactive features */
+
+.searchButton:disabled,
+.searchInput:disabled,
+.actionButton:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.searchInput:disabled {
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* Interaction feedback */
+
+.actionButton:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.logo:focus-visible,
+.actionButton:focus-visible,
+.searchButton:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.search:focus-within {
+  border-color: #38bdf8;
+}
+
+/* Tablet and smaller screens */
+
+@media (max-width: 960px) {
+  .header {
+    height: auto;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+
+    padding: 16px 20px;
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+
+    font-size: 30px;
+  }
+
+  .actions {
+    grid-column: 2;
+    grid-row: 1;
+
+    grid-template-columns: repeat(2, 112px);
+    column-gap: 10px;
+
+    transform: none;
+  }
+
+  .actionButton {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .catalogIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .favoriteIcon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    width: 100%;
+    height: 46px;
+    margin: 0;
+
+    border-radius: 12px;
+    transform: none;
+  }
+
+  .searchInput {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 540px) {
+  .container {
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  .actions {
+    grid-template-columns: repeat(2, 40px);
+    column-gap: 8px;
+  }
+
+  .actionButton {
+    height: 40px;
+    padding: 0;
+  }
+
+  .actionText {
+    display: none;
+  }
+
+  .search {
+    height: 42px;
+  }
+}

@@ -1,0 +1,514 @@
+.page {
+  box-sizing: border-box;
+  min-height: 2179px;
+  padding: 72px 36px 92px;
+  color: #fff;
+  background: linear-gradient(296.82deg, #00010f 0%, #00101b 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 1372px;
+  margin-inline: auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-width: 170px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid #144161;
+  border-radius: 10px;
+  background: #000a11;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.backLink svg {
+  width: 32px;
+  height: 28px;
+}
+
+.backLink:hover {
+  background: #08304d;
+}
+
+.backLink:focus-visible,
+.readMore:focus-visible,
+.requirementsToggle:focus-visible,
+.historySelector select:focus-visible {
+  outline: 2px solid #50b4ea;
+  outline-offset: 3px;
+}
+
+.gameTitle {
+  margin: 46px 0 18px;
+  font-size: clamp(30px, 3.3333vw, 48px);
+  line-height: 1.23;
+  font-weight: 800;
+}
+.overview {
+  display: grid;
+  grid-template-columns: minmax(0, 884fr) minmax(0, 446fr);
+  gap: 36px;
+  align-items: start;
+}
+.mediaColumn {
+  min-width: 0;
+}
+
+.offers {
+  min-width: 0;
+}
+
+.offerDivider {
+  height: 4px;
+  margin: 42px 0;
+  background: rgba(158,158,158,.21);
+}
+
+.offerCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 143px;
+  padding: 22px 32px;
+  background: rgba(10,52,83,.9);
+  border-radius: 16px;
+}
+.offerBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.offerBrand svg, .offerBrand img {
+  display: block;
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  object-fit: contain;
+}
+
+.offerBrand strong {
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.2;
+}
+
+.offerPrices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  padding-top: 26px;
+}
+
+.offerPrices del {
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+  white-space: nowrap;
+}
+
+.offerPrices strong {
+  font-size: clamp(18px, 2vw, 30px);
+  color: #a3e635;
+  white-space: nowrap;
+}
+
+.discount {
+  position: absolute;
+  right: -5px;
+  top: -8px;
+  border-radius: 5px;
+  padding: 5px 8px;
+  background: #e63535;
+  font-size: 16px;
+}
+
+.storeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #50b4ea;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.storeLink svg {
+  width: 18px;
+  height: 18px;
+}
+
+.storeLink:hover {
+  text-decoration: underline;
+}
+
+.storeLink:focus-visible {
+  outline: 2px solid #50b4ea;
+  outline-offset: 3px;
+}
+
+.demoNote {
+  margin: 20px 0 0;
+  color: #8394a8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.about {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 4px solid rgba(158,158,158,.21);
+}
+
+.about h2, .history h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.description {
+  max-width: 1302px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.description p {
+  margin: 0 0 22px;
+}
+
+.clampedDescription {
+  display: -webkit-box;
+  overflow: hidden;
+
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  border: 0;
+  background: none;
+  color: #50b4ea;
+  padding: 0;
+  font: 700 20px/24px 'Montserrat',sans-serif;
+  cursor: pointer;
+}
+
+.readMore svg, .requirementsToggle svg {
+  width: 24px;
+  height: 24px;
+  transition: transform .15s ease;
+}
+
+.upChevron {
+  transform: rotate(180deg);
+}
+
+.unavailable {
+  color: #9baebc;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.requirements {
+  margin-top: 34px;
+  border-top: 2px solid #0063a9;
+  border-bottom: 2px solid #0063a9;
+}
+
+.requirements h2 {
+  margin: 0;
+}
+
+.requirementsToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 24px 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  text-align: left;
+  font: 700 24px/30px 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+.requirementsToggle svg {
+  width: 28px;
+  height: 28px; flex: 0 0 28px; }
+.requirementsContent {
+  padding: 2px 0 32px;
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 42px;
+}
+
+.specGrid h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.specGrid ul {
+  margin: 0;
+  padding-left: 28px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.specGrid li {
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.history {
+  padding-top: 26px;
+}
+
+.historyHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.historyHeading h2 {
+  margin: 0; }
+
+.historyNote {
+  margin: 6px 0 0;
+  color: #8394a8;
+  font-size: 14px;
+}
+
+.historySelector {
+  display: inline-flex;
+  position: relative;
+}
+
+.historySelector::after {
+  content: '';
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-25%);
+  border: 8px solid transparent;
+  border-top-color: #fff;
+  pointer-events: none;
+}
+
+.historySelector select {
+  min-width: 169px;
+  height: 56px;
+  appearance: none;
+  padding: 0 52px 0 22px;
+  border: 1px solid #144161;
+  border-radius: 10px;
+  background: #002138;
+  color: white;
+  font: 600 20px 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+.emptyChart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 368px;
+  margin-top: 28px;
+  border: 1px dashed rgba(217,217,255,.25);
+  border-radius: 10px;
+  color: #b5c5d8;
+  text-align: center;
+}
+.emptyChart p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.emptyChart span {
+  font-size: 15px;
+  color: #8394a8;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .page { min-height: 0;
+    padding: 48px 24px 90px;
+  }
+
+  .overview {
+    grid-template-columns: minmax(0, 1fr) minmax(310px, .55fr);
+    gap: 24px;
+  }
+
+  .offerCard {
+    padding: 20px 16px;
+  }
+
+  .offerBrand svg, .offerBrand img {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .offerBrand strong {
+    font-size: 24px;
+  }
+
+  .offerPrices strong {
+    font-size: 19px;
+  }
+
+  .offerPrices del {
+    font-size: 14px;
+  }
+}
+@media (max-width: 850px) {
+  .overview {
+    grid-template-columns: 1fr;
+  }
+
+  .offers {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 16px;
+  }
+
+  .offerDivider {
+    display: none;
+  }
+
+  .offerCard {
+    min-height: 130px;
+  }
+
+  .demoNote {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .specGrid {
+    gap: 24px;
+  }
+
+  .specGrid ul {
+    font-size: 16px;
+  }
+
+}
+@media (max-width: 600px) {
+  .page {
+    padding: 24px 16px 64px;
+  }
+
+  .backLink {
+    min-width: 130px;
+    font-size: 15px;
+  }
+
+  .backLink svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .gameTitle {
+    margin: 32px 0 16px;
+    font-size: 28px;
+  }
+
+  .offers {
+    grid-template-columns: 1fr;
+  }
+
+  .offerCard {
+    min-height: 115px;
+    padding: 16px 18px;
+  }
+
+  .offerBrand strong {
+    font-size: 24px;
+  }
+
+  .offerPrices {
+    padding-top: 14px;
+  }
+
+  .offerPrices strong {
+    font-size: 22px;
+  }
+
+  .about {
+    margin-top: 28px;
+  }
+
+  .about h2, .history h2, .requirementsToggle {
+    font-size: 19px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .readMore {
+    font-size: 15px;
+  }
+
+  .specGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .historyHeading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .historySelector select {
+    height: 46px;
+    min-width: 140px;
+    font-size: 16px;
+  }
+
+  .emptyChart {
+    min-height: 260px;
+    padding: 18px;
+  }
+
+  .emptyChart p {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .readMore svg, .requirementsToggle svg {
+    transition: none;
+  }
+}
